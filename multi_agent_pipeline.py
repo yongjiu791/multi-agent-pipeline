@@ -55,9 +55,15 @@ class KeywordExtractor:
 # ==============================
 class ReportGenerator:
     def generate(self, keywords_list: List[List[str]]):
-        print("[报告生成 Agent] 正在生成报告...\n")
+        # 1️ 打印到终端（可读报告）
         for i, kws in enumerate(keywords_list, 1):
             print(f"文本 {i} 关键词：{', '.join(kws)}")
+
+        # 2 写入 report.txt 文件（生成文件报告）
+        with open("report.txt", "w", encoding="utf-8") as f:
+            for i, kws in enumerate(keywords_list, 1):
+                line = f"文本 {i} 关键词：{', '.join(kws)}\n"
+                f.write(line)
 
 # ==============================
 # 多 Agent 流水线调度
