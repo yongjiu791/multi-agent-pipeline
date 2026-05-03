@@ -1,24 +1,25 @@
-# Multi-Agent Pipeline
+# 多 Agent 流水线示例项目
 
-Demo of a **multi-agent collaboration system with long-chain reasoning**.
+演示一个 **多 Agent 协作 + 长链推理** 的自动化处理系统。
 
-## Core Problem Solved
-In large-scale text or data processing tasks, manual cleaning, analysis, and reporting is **time-consuming and error-prone**. This project automates the pipeline, reducing human intervention and ensuring consistent, reproducible results.
+## 核心解决的痛点
+在大规模文本或数据处理任务中，手动清洗、分析和生成报告 **耗时且易出错**。  
+本项目通过多 Agent 自动化流水线减少人工干预，提高效率和一致性。
 
-## Core Logic Flow
-The pipeline consists of **four collaborating Agents**:
+## 核心逻辑流
+流水线包含 **四个协作 Agent**：
 
-1. **DataFetcher** – Automatically fetches raw data (simulated in this demo).  
-2. **TextCleaner** – Cleans and preprocesses text (removes stopwords, punctuation).  
-3. **KeywordExtractor** – Performs long-chain reasoning to extract top keywords based on word length and order, using previous Agent outputs as input.  
-4. **ReportGenerator** – Compiles the processed information into a structured report.
+1. **数据抓取 Agent (DataFetcher)** – 自动获取原始数据（示例中为模拟文本）。  
+2. **文本清洗 Agent (TextCleaner)** – 对文本进行预处理（去停用词、去标点）。  
+3. **关键词提取 Agent (KeywordExtractor)** – 使用长链推理，根据词长度和顺序提取关键词，依赖前一个 Agent 的输出。  
+4. **报告生成 Agent (ReportGenerator)** – 汇总处理结果，生成可读报告。
 
-**Highlights:**
-- Multi-Agent collaboration ensures modularity and easy extension.  
-- Long-chain reasoning allows each Agent to build upon prior results.  
-- Fully automated pipeline, reducing manual processing time and errors.
+**特点：**
+- 多 Agent 协作，模块化设计，易于扩展。  
+- 长链推理，每个 Agent 的输出影响下游决策。  
+- 全自动流水线，减少人工操作时间和错误率。
 
-## How to Run
+## 运行方法
 
 ```bash
 python multi_agent_pipeline.py
